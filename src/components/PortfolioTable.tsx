@@ -31,17 +31,6 @@ function getCountryFlag(country: Country): string {
   return flags[country];
 }
 
-function getCountryName(country: Country): string {
-  const names: Record<Country, string> = {
-    US: 'アメリカ',
-    JP: '日本',
-    CN: '中国',
-    KR: '韓国',
-    HK: '香港',
-  };
-  return names[country];
-}
-
 export function PortfolioTable({ stocks }: Props) {
   return (
     <div className={styles.tableContainer}>
@@ -97,10 +86,7 @@ export function PortfolioTable({ stocks }: Props) {
                 )}
               </td>
               <td>
-                <span className={styles.countryCell}>
-                  <span className={styles.countryFlag}>{getCountryFlag(stock.country)}</span>
-                  <span className={styles.countryName}>{getCountryName(stock.country)}</span>
-                </span>
+                <span className={styles.countryFlag}>{getCountryFlag(stock.country)}</span>
               </td>
             </tr>
           ))}
