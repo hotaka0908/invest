@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Stock, Country } from '../types';
 import styles from './PortfolioTable.module.css';
 
@@ -31,9 +32,70 @@ function getCountryFlag(country: Country): string {
   return flags[country];
 }
 
+// Generate random position for floating logos
+function getRandomPosition(index: number, total: number) {
+  const columns = Math.ceil(Math.sqrt(total));
+  const row = Math.floor(index / columns);
+  const col = index % columns;
+
+  const baseX = (col / columns) * 80 + 10;
+  const baseY = (row / Math.ceil(total / columns)) * 70 + 15;
+
+  const offsetX = (Math.random() - 0.5) * 15;
+  const offsetY = (Math.random() - 0.5) * 15;
+
+  return {
+    left: `${Math.max(5, Math.min(85, baseX + offsetX))}%`,
+    top: `${Math.max(10, Math.min(80, baseY + offsetY))}%`,
+  };
+}
+
 export function PortfolioTable({ stocks }: Props) {
+  const [showTable, setShowTable] = useState(false);
+
+  if (!showTable) {
+    return (
+      <div className={styles.floatingContainer}>
+        <div className={styles.logosArea}>
+          {stocks.map((stock, index) => {
+            const position = getRandomPosition(index, stocks.length);
+            const delay = index * 0.1;
+            const duration = 3 + Math.random() * 2;
+
+            return (
+              <div
+                key={stock.id}
+                className={styles.floatingLogo}
+                style={{
+                  left: position.left,
+                  top: position.top,
+                  animationDelay: `${delay}s`,
+                  animationDuration: `${duration}s`,
+                }}
+              >
+                {stock.logoUrl ? (
+                  <img src={stock.logoUrl} alt={stock.name} />
+                ) : (
+                  <span className={`${styles.floatingIcon} ${getCategoryClass(stock.category)}`}>
+                    {stock.ticker}
+                  </span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+        <button className={styles.viewButton} onClick={() => setShowTable(true)}>
+          パフォーマンスを見る
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.tableContainer}>
+      <button className={styles.backButton} onClick={() => setShowTable(false)}>
+        ロゴ表示に戻る
+      </button>
       <table className={styles.table}>
         <thead>
           <tr>
