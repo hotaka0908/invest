@@ -326,6 +326,7 @@ export const stocks2024: Stock[] = [
     prices: { jan: 174, jun: null, sep: null, dec: 128 },
     changePercent: -26,
     isNew: true,
+    weight: 0.5,
     logoUrl: 'https://img.logo.dev/arm.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
   {
@@ -337,6 +338,7 @@ export const stocks2024: Stock[] = [
     prices: { jan: 648, jun: null, sep: null, dec: 847 },
     changePercent: 31,
     isNew: true,
+    weight: 0.3,
     logoUrl: 'https://img.logo.dev/netflix.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
 ];
