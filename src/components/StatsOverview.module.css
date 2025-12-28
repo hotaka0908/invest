@@ -4,7 +4,7 @@
   align-items: flex-end;
   gap: 16px;
   margin-bottom: 50px;
-  padding-top: 40px;
+  padding-top: 20px;
   animation: fadeIn 0.8s ease-out 0.2s both;
 }
 
@@ -213,23 +213,75 @@
   .statsOverview {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding-top: 20px;
   }
 
   .statCard {
     width: 100%;
-    max-width: 300px;
+    max-width: 260px;
+    padding: 18px 16px;
+    border-radius: 16px;
+    gap: 10px;
+  }
+
+  .statLabel {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .statValue {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .arrow {
+    font-size: 14px;
+  }
+
+  .statChange {
+    font-size: 14px;
+    padding: 4px 12px;
   }
 
   .first,
   .second,
   .third {
     order: unset;
-    padding-bottom: 28px;
+    padding-bottom: 18px;
   }
 
   .first::after,
   .second::after,
   .third::after {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsOverview {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .statCard {
+    max-width: 240px;
+    padding: 14px 12px;
+    border-radius: 12px;
+    gap: 8px;
+  }
+
+  .statLabel {
+    font-size: 10px;
+  }
+
+  .statValue {
+    font-size: 11px;
+  }
+
+  .statChange {
+    font-size: 13px;
+    padding: 3px 10px;
   }
 }

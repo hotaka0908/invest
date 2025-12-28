@@ -369,10 +369,6 @@
   .table td {
     padding: 10px 8px;
   }
-
-  .tickerName span:not(.tickerIcon) {
-    display: none;
-  }
 }
 
 /* Floating container responsive */
