@@ -1,4 +1,5 @@
 export type StockCategory = 'index' | 'tech' | 'crypto' | 'portfolio';
+export type Country = 'US' | 'JP' | 'CN' | 'KR' | 'HK';
 
 export interface PriceData {
   jan: number | null;
@@ -12,6 +13,7 @@ export interface Stock {
   name: string;
   ticker: string;
   category: StockCategory;
+  country: Country;
   prices: PriceData;
   changePercent: number | null;
   isNew?: boolean;

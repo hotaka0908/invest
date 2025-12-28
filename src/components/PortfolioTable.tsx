@@ -1,4 +1,4 @@
-import type { Stock } from '../types';
+import type { Stock, Country } from '../types';
 import styles from './PortfolioTable.module.css';
 
 interface Props {
@@ -20,6 +20,28 @@ function getCategoryClass(category: Stock['category']): string {
   return classes[category];
 }
 
+function getCountryFlag(country: Country): string {
+  const flags: Record<Country, string> = {
+    US: '🇺🇸',
+    JP: '🇯🇵',
+    CN: '🇨🇳',
+    KR: '🇰🇷',
+    HK: '🇭🇰',
+  };
+  return flags[country];
+}
+
+function getCountryName(country: Country): string {
+  const names: Record<Country, string> = {
+    US: 'アメリカ',
+    JP: '日本',
+    CN: '中国',
+    KR: '韓国',
+    HK: '香港',
+  };
+  return names[country];
+}
+
 export function PortfolioTable({ stocks }: Props) {
   return (
     <div className={styles.tableContainer}>
@@ -30,6 +52,7 @@ export function PortfolioTable({ stocks }: Props) {
             <th>1月</th>
             <th>12月</th>
             <th>騰落率</th>
+            <th>国</th>
           </tr>
         </thead>
         <tbody>
@@ -72,6 +95,12 @@ export function PortfolioTable({ stocks }: Props) {
                 ) : (
                   <span className={styles.changePill}>—</span>
                 )}
+              </td>
+              <td>
+                <span className={styles.countryCell}>
+                  <span className={styles.countryFlag}>{getCountryFlag(stock.country)}</span>
+                  <span className={styles.countryName}>{getCountryName(stock.country)}</span>
+                </span>
               </td>
             </tr>
           ))}

@@ -41,16 +41,20 @@
 
 .table th:first-child {
   text-align: left;
-  width: 40%;
+  width: 35%;
 }
 
 .table th:nth-child(2),
 .table th:nth-child(3) {
-  width: 20%;
+  width: 15%;
+}
+
+.table th:nth-child(4) {
+  width: 18%;
 }
 
 .table th:last-child {
-  width: 20%;
+  width: 17%;
 }
 
 .table td {
@@ -184,6 +188,23 @@
 
 .highlightRow td:first-child {
   color: var(--accent-gold);
+}
+
+.countryCell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.countryFlag {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.countryName {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
 @media (max-width: 768px) {
