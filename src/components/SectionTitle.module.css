@@ -30,3 +30,27 @@
   height: 1px;
   background: linear-gradient(90deg, var(--border-subtle), transparent);
 }
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .sectionTitle h2 {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .sectionTitle h2 {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+}

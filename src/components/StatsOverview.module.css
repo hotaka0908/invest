@@ -211,77 +211,130 @@
 
 @media (max-width: 768px) {
   .statsOverview {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 30px;
     padding-top: 20px;
   }
 
   .statCard {
-    width: 100%;
-    max-width: 260px;
-    padding: 18px 16px;
-    border-radius: 16px;
-    gap: 10px;
+    width: 140px;
+    padding: 16px 10px;
+    border-radius: 14px;
+    gap: 8px;
   }
 
   .statLabel {
-    font-size: 11px;
-    letter-spacing: 1.5px;
+    font-size: 9px;
+    letter-spacing: 1px;
   }
 
   .statValue {
-    font-size: 12px;
-    gap: 6px;
+    font-size: 10px;
+    gap: 4px;
   }
 
   .arrow {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .statChange {
-    font-size: 14px;
-    padding: 4px 12px;
+    font-size: 12px;
+    padding: 4px 10px;
   }
 
-  .first,
-  .second,
+  .first {
+    padding-bottom: 40px;
+  }
+
+  .second {
+    padding-bottom: 32px;
+  }
+
   .third {
-    order: unset;
-    padding-bottom: 18px;
+    padding-bottom: 28px;
   }
 
-  .first::after,
-  .second::after,
+  .first::after {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    bottom: 10px;
+  }
+
+  .second::after {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    bottom: 8px;
+  }
+
   .third::after {
-    display: none;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    bottom: 6px;
   }
 }
 
 @media (max-width: 480px) {
   .statsOverview {
-    gap: 10px;
+    gap: 6px;
     margin-bottom: 24px;
   }
 
   .statCard {
-    max-width: 240px;
-    padding: 14px 12px;
-    border-radius: 12px;
-    gap: 8px;
+    width: 110px;
+    padding: 12px 6px;
+    border-radius: 10px;
+    gap: 6px;
   }
 
   .statLabel {
-    font-size: 10px;
+    font-size: 8px;
+    letter-spacing: 0.5px;
   }
 
   .statValue {
-    font-size: 11px;
+    font-size: 9px;
+    gap: 2px;
+  }
+
+  .arrow {
+    font-size: 10px;
   }
 
   .statChange {
-    font-size: 13px;
-    padding: 3px 10px;
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .first {
+    padding-bottom: 34px;
+  }
+
+  .second {
+    padding-bottom: 28px;
+  }
+
+  .third {
+    padding-bottom: 24px;
+  }
+
+  .first::after {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+
+  .second::after {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .third::after {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
   }
 }
