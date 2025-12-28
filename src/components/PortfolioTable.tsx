@@ -115,20 +115,22 @@ export function PortfolioTable({ stocks }: Props) {
             >
               <td>
                 <div className={styles.tickerName}>
-                  {stock.logoUrl ? (
-                    <img
-                      src={stock.logoUrl}
-                      alt={stock.name}
-                      className={styles.logoIcon}
-                    />
-                  ) : (
-                    <span className={`${styles.tickerIcon} ${getCategoryClass(stock.category)}`}>
-                      {stock.ticker}
-                    </span>
-                  )}
-                  <span>{stock.name}</span>
-                  {stock.isNew && <span className={styles.newBadge}>NEW</span>}
-                  {stock.isDelete && <span className={styles.deleteBadge}>DELETE</span>}
+                  <div className={styles.logoWrapper}>
+                    {stock.logoUrl ? (
+                      <img
+                        src={stock.logoUrl}
+                        alt={stock.name}
+                        className={styles.logoIcon}
+                      />
+                    ) : (
+                      <span className={`${styles.tickerIcon} ${getCategoryClass(stock.category)}`}>
+                        {stock.ticker}
+                      </span>
+                    )}
+                    {stock.isNew && <span className={styles.newBadge}>N</span>}
+                    {stock.isDelete && <span className={styles.deleteBadge}>D</span>}
+                  </div>
+                  <span className={styles.stockName}>{stock.name}</span>
                 </div>
               </td>
               <td>{formatNumber(stock.prices.jan)}</td>

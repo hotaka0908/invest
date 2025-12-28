@@ -249,24 +249,49 @@
   gap: 12px;
 }
 
+.logoWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.stockName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .newBadge {
-  font-size: 10px;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 9px;
   font-weight: 700;
   color: #fff;
   background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-  padding: 2px 6px;
-  border-radius: 4px;
-  letter-spacing: 0.5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .deleteBadge {
-  font-size: 10px;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 9px;
   font-weight: 700;
   color: #fff;
   background: linear-gradient(135deg, #636e72, #2d3436);
-  padding: 2px 6px;
-  border-radius: 4px;
-  letter-spacing: 0.5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .tickerIcon {
