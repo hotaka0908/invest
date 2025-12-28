@@ -124,6 +124,7 @@ export const stocks2025: Stock[] = [
     prices: { jan: 1590, jun: 1551, sep: 1711, dec: 1374 },
     changePercent: -14,
     isNew: true,
+    weight: 0.93,
     logoUrl: 'https://img.logo.dev/bitcoin.org?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
   {
@@ -135,6 +136,7 @@ export const stocks2025: Stock[] = [
     prices: { jan: 169, jun: 215, sep: 281, dec: 198 },
     changePercent: 17,
     isNew: true,
+    weight: 1,
     logoUrl: 'https://img.logo.dev/oracle.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
   {
@@ -146,6 +148,7 @@ export const stocks2025: Stock[] = [
     prices: { jan: 103, jun: 222, sep: 132, dec: 81 },
     changePercent: -21,
     isNew: true,
+    weight: 0.57,
     logoUrl: 'https://img.logo.dev/circle.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
   {
@@ -157,6 +160,7 @@ export const stocks2025: Stock[] = [
     prices: { jan: 191, jun: null, sep: null, dec: 182 },
     changePercent: -5,
     isNew: true,
+    weight: 0.07,
     logoUrl: 'https://img.logo.dev/duolingo.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
   {
@@ -168,6 +172,7 @@ export const stocks2025: Stock[] = [
     prices: { jan: 40, jun: null, sep: null, dec: 39 },
     changePercent: -3,
     isNew: true,
+    weight: 0.07,
     logoUrl: 'https://img.logo.dev/mi.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
   {
@@ -179,6 +184,7 @@ export const stocks2025: Stock[] = [
     prices: { jan: 157, jun: null, sep: null, dec: 152 },
     changePercent: -3,
     isNew: true,
+    weight: 0.07,
     logoUrl: 'https://img.logo.dev/alibaba.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
   {
@@ -190,6 +196,7 @@ export const stocks2025: Stock[] = [
     prices: { jan: 614, jun: null, sep: null, dec: 603 },
     changePercent: -2,
     isNew: true,
+    weight: 0.07,
     logoUrl: 'https://img.logo.dev/tencent.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
   {
@@ -201,6 +208,7 @@ export const stocks2025: Stock[] = [
     prices: { jan: 100800, jun: null, sep: null, dec: 117000 },
     changePercent: 16,
     isNew: true,
+    weight: 0.07,
     logoUrl: 'https://img.logo.dev/samsung.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
   {
@@ -212,6 +220,7 @@ export const stocks2025: Stock[] = [
     prices: { jan: 136, jun: null, sep: null, dec: 136 },
     changePercent: 0,
     isNew: true,
+    weight: 0,
     logoUrl: 'https://img.logo.dev/airbnb.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
 ];
@@ -557,7 +566,6 @@ export const stocks2026: Stock[] = [
     country: 'US',
     prices: { jan: 136, jun: null, sep: null, dec: null },
     changePercent: null,
-    isNew: true,
     logoUrl: 'https://img.logo.dev/airbnb.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ',
   },
 ];
@@ -570,7 +578,7 @@ function calculatePortfolioStats(stocks: Stock[]) {
       const dec = s.prices.dec ?? 0;
       if (jan === 0) return acc;
       const returnRate = (dec - jan) / jan;
-      const weight = s.isNew ? 0.5 : 1;
+      const weight = s.weight !== undefined ? s.weight : (s.isNew ? 0.5 : 1);
       return {
         totalWeightedReturn: acc.totalWeightedReturn + returnRate * weight,
         totalWeight: acc.totalWeight + weight,
@@ -605,7 +613,7 @@ export const statsOverview2024: StatOverview[] = [
 // 2026年のstatsOverview（テンプレート）
 const stats2026 = calculatePortfolioStats(stocks2026);
 export const statsOverview2026: StatOverview[] = [
-  { label: 'ホタP16', startValue: stats2026.portfolioStart, endValue: stats2026.portfolioEnd },
+  { label: 'ホタP22', startValue: stats2026.portfolioStart, endValue: stats2026.portfolioEnd },
   { label: 'S&P 500', startValue: 6910, endValue: 6910 },
   { label: '日経平均', startValue: 50345, endValue: 50345 },
 ];
@@ -642,7 +650,7 @@ export function getDataForYear(year: 2024 | 2025 | 2026) {
       statsOverview: statsOverview2026,
       topGainers: getTopGainers(stocks2026),
       topLosers: getTopLosers(stocks2026),
-      portfolioLabel: 'ホタP16',
+      portfolioLabel: 'ホタP22',
     };
   }
   return {

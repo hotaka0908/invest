@@ -19,6 +19,7 @@ export interface Stock {
   isNew?: boolean;
   isDelete?: boolean;
   logoUrl?: string;
+  weight?: number;
 }
 
 export interface StatOverview {
