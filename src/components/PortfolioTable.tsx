@@ -127,8 +127,8 @@ export function PortfolioTable({ stocks }: Props) {
                         {stock.ticker}
                       </span>
                     )}
-                    {stock.isNew && <span className={styles.newBadge}>N</span>}
-                    {stock.isDelete && <span className={styles.deleteBadge}>D</span>}
+                    {stock.isNew && <span className={styles.newBadge}>NEW</span>}
+                    {stock.isDelete && <span className={styles.deleteBadge}>DELETE</span>}
                   </div>
                   <span className={styles.stockName}>{stock.name}</span>
                 </div>
