@@ -392,7 +392,24 @@
 @media (max-width: 480px) {
   .table th,
   .table td {
-    padding: 10px 8px;
+    padding: 10px 6px;
+  }
+
+  .table th:first-child {
+    width: 42%;
+  }
+
+  .table th:nth-child(2),
+  .table th:nth-child(3) {
+    width: 14%;
+  }
+
+  .table th:nth-child(4) {
+    width: 18%;
+  }
+
+  .table th:last-child {
+    width: 12%;
   }
 }
 
@@ -411,6 +428,20 @@
     padding: 12px 24px;
     font-size: 14px;
   }
+
+  .newBadge {
+    font-size: 6px;
+    padding: 1px 3px;
+    top: -4px;
+    right: -8px;
+  }
+
+  .deleteBadge {
+    font-size: 5px;
+    padding: 1px 2px;
+    top: -4px;
+    right: -12px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -425,5 +456,19 @@
 
   .floatingIcon {
     font-size: 12px;
+  }
+
+  .newBadge {
+    font-size: 5px;
+    padding: 1px 2px;
+    top: -3px;
+    right: -6px;
+  }
+
+  .deleteBadge {
+    font-size: 4px;
+    padding: 1px 2px;
+    top: -3px;
+    right: -10px;
   }
 }
